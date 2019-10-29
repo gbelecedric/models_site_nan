@@ -1,214 +1,215 @@
 # models_site_nan
 
-## nomnbre d'appli
+## nombre d'appli (5)
 
-* configurations
-* contact
-* entreprise
-* testimony
-* blog
+	* configurations
+	* contact
+	* entreprise
+	* testimony
+	* blog
 
 ## configurations
-  showcase(
-    id,
-    main-title, // grand titre
-    img, // Image du slider
-    description,
-    subtitle,
-    page_id,
-    action, //Boutton principal
-  ),
-  
-  
-  index_section_right_left (
-	  id,
-    title,
-    main-description,
-    img,
-    side-title,
-    side-description,
-  )
 
-index_panel (
-	id,
-	img,
-	title,
-	description,
-	action,
-  link,
-),
-
-Call-to-action (
-	id,
-	img,
-	text,
-	button,
-)
-
-newsletter(
-	id,
-	name,
-	title,
-	img,
-  
-) 
-
-Sponsor(
-	id,
-	img,
-	title
-	description,
-),
-candidater (
-	id,
- 	title,
+	showcase(
+		id,
+		main-title: CharField, // grand titre
+		img: ImageField, // Image du slider
+		description: TextField,
+		subtitle: CharField,
+		page_id: ForeignKey,
+		action: CharField, //Boutton principal
 	),
 
-environnement (
-	id,
-	img,
-	description,
-	right_title,
-	right_description,
-)
-admission (
-	id,
-	title,
-	description,
-	right_title,
-	right_description,
-)
-campuslife (
-	id,
-	title,
-	right-title,
-	right-description,
 
-)
-
-section_sponsor(
+	index_section_right_left (
 	id,
-	title1, //h1
-	description1,
-	subtitle1, //h2
-	subdescription2,
-		// inclure table table moyens_payment
-	subtitle2,
-	subdescription2,
-	title2,	
-),
+	title: CharField,
+	main-description: TextField,
+	img: ImageField,
+	side-title: CharField,
+	side-description: TextField,
+	)
 
-raison_de_sponsoriser(
+	index_panel (
 	id,
-	title,
-)
-
-moyens_paiement(
-	id,
-	img,
-	link,
-)
-
-faq (
-	id,
-	question,
-	reponse,
-
-)
-
-module (
-	id,
-	img,
-	title,
-	description (tinyMCE),
-),
-
-
-## contact
-newsletter (
-	id,
-	email,
+	img: ImageField,
+	title: CharField,
+	description: TextField,
+	action: CharField,
+	link: UrlField,
 	),
-  
 
- form_candidature (
+	Call-to-action: CharField (
+	id,
+	img: ImageField,
+	description: TextField,
+	action: CharField,
+	link: UrlField,
+	)
+
+	newsletter(
+	id,
+	name: CharField,
+	title: CharField,
+	img: ImageField,
+
+	)
+
+	Sponsor(
+	id,
+	img: ImageField,
+	title: CharField
+	description: TextField,
+	),
+	candidater (
+	id,
+	title: CharField,
+	),
+
+	environnement (
+	id,
+	img: ImageField,
+	description: TextField,
+	right_title: CharField,
+	right_description: TextField,
+	)
+	admission (
+	id,
+	title: CharField,
+	description: TextField,
+	right_title: CharField,
+	right_description: TextField,
+	)
+	campuslife (
+	id,
+	title: CharField,
+	right-title: CharField,
+	right-description: TextField,
+
+	)
+
+	section_sponsor(
+	id,
+	title1: CharField, //h1
+	description1: TextField,
+	subtitle1: CharField, //h2
+	subdescription1: TextField,
+	// inclure table table moyens_payment
+	subtitle2: CharField,
+	subdescription2: TextField,
+	title2: CharField,
+	),
+
+	raison_de_sponsoriser(
+	id,
+	title: CharField,
+	)
+
+	moyens_paiement(
+	id,
+	img: ImageField,
+	link: UrlField,
+	)
+
+	faq (
+	id,
+	question: TextField,
+	reponse: TextField,
+
+	)
+
+	module (
+	id,
+	img: ImageField,
+	title: CharField,
+	description: TextField (tinyMCE),
+	),
+
+
+	## contact
+	newsletter (
+	id,
+	email: CharField,
+	),
+
+
+	form_candidature (
 	id,
 	nom,
 	prenoms,
 	email,
 	telephone,
 	)
-  
 
-form_sponsor(
+
+	form_sponsor(
 	id,
 	entreprise,
 	email,
 	telephone,
 	message,
-),
+	),
 
 
-  
+
 ## entreprise
 
-entreprise_index_info(
-	id,
-	email,
-	contact1,
-	contact2,
-)
+	entreprise_index_info(
+		id,
+		email,
+		contact1,
+		contact2,
+	)
 
-entreprise_date_creation(
-	id,
-	date
-)
+	entreprise_date_creation(
+		id,
+		date
+	)
 
-entreprise_social(
-	id,
-	img,
-	link,
-)
+	entreprise_social(
+		id,
+		img: ImageField,
+		link: UrlField,
+	)
 
-entreprise_map(
-	id,
-	longitude,
-	latitude,
-)
+	entreprise_map(
+		id,
+		longitude: Float,
+		latitude: Float,
+	)
 
 
 ## testimony
-	
-testimony (
-	id,
-	img,
-	title,
-	description
-)
+
+	testimony (
+		id,
+		img: ImageField,
+		title: CharField,
+		description: TextField
+	)
 
 ## Blog
 
-categorie (
-	id,
- 	title,
-	img,
-	description,
-),
+	categorie (
+		id,
+		title: CharField,
+		img: ImageField,
+		description: TextField,
+	),
 
-article (
-	id,
-	title,
-	img,
-	timestamp,
-	categorie_id //fk
-	description,
-	content,
-	nb_vues,
-	nb_commentaires,
-	tags, //many
-),
+	article (
+		id,
+		title: CharField,
+		img: ImageField,
+		timestamp,
+		categorie_id: ForeignKey //fk
+		description: TextField,
+		content: TextField,
+		nb_vues: Integer,
+		tag_id: ManyToMany, //many
+	),
 
-tag(
-	id,
-	title,
-)
+	tag(
+		id,
+		title: CharField,
+	)
